@@ -3,23 +3,17 @@ branches:
   only:
     - master
 
-# notifications:
-#   email:
-#     - asampath@umail.iu.edu
-#     - soachar@umail.iu.edu
-#     - kgundlup@umail.iu.edu
-#     - pbheemag@umail.iu.edu
 jdk:
   - oraclejdk8
 sudo: false
 install: true
-script: cd "SG_MICROSERVICE_STORMDETECTOR" && mvn clean install -DskipTests=true
+script: cd "SG_MICROSERVICE_STROMCLUSTERING" && mvn clean install -DskipTests=true
 
 before_deploy:
   - cd ..
-  - zip -r SG_MICROSERVICE_STORMDETECTOR.zip SG_MICROSERVICE_STORMDETECTOR scripts appspec.yml || true
+  - zip -r SG_MICROSERVICE_STROMCLUSTERING.zip SG_MICROSERVICE_STROMCLUSTERING scripts appspec.yml || true
   - mkdir -p "dpl_java_upload"
-  - mv SG_MICROSERVICE_STORMDETECTOR.zip dpl_java_upload/SG_MICROSERVICE_STORMDETECTOR.zip || true
+  - mv SG_MICROSERVICE_STROMCLUSTERING.zip dpl_java_upload/SG_MICROSERVICE_STROMCLUSTERING.zip || true
 
 deploy:
   - provider: s3
@@ -38,10 +32,17 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
     secret_access_key: $AWS_SECRET_KEY
     bucket: sga-teamnpcomplete
-    key: SG_MICROSERVICE_STORMDETECTOR.zip
+    key: SG_MICROSERVICE_STROMCLUSTERING.zip
     bundle_type: zip
     application: TeamNPComplete
     deployment_group: TeamNPComplete
     region: us-west-2
     on:
       branch: master
+
+# notifications:
+#   email:
+#     - asampath@umail.iu.edu
+#     - soachar@umail.iu.edu
+#     - kgundlup@umail.iu.edu
+#     - pbheemag@umail.iu.edu
