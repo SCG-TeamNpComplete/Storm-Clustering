@@ -1,3 +1,4 @@
+#test
 echo ' killing existing tomcat process if any'
 cd /usr/local/tomcat7/apache-tomcat-7.0.72
 sudo sh ./bin/shutdown.sh
