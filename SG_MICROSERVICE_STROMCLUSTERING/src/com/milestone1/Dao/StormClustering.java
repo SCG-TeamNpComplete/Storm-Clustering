@@ -26,9 +26,10 @@ public class StormClustering {
 	public String generateKML(String xmlNewResponse) throws ParseException {
 
 		Test test = new Test();
+		String dummy="";
 
-		return "<KMLResponseFromStormClustering>" + "<ResponseMessageFromPrevious>" + xmlNewResponse
-				+ "</ResponseMessageFromPrevious>" + "</KMLResponseFromStormClustering>";
+		return "<KMLResponseFromStormClustering>" +"<tags>"+ dummy +"</tags>" + "<ResponseMessageFromPrevious>" + xmlNewResponse
+				+ "</ResponseMessageFromPrevious>" +  "</KMLResponseFromStormClustering>";
 	}
 
 	@POST
