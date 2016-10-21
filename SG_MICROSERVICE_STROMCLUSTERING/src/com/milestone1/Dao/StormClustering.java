@@ -39,9 +39,12 @@ public class StormClustering {
 		StormClustering sc = new StormClustering();
 		String xmlNewResponse = xmlResponse;
 		System.out.println("data in Clustering" + xmlNewResponse);
-		sc.generateKML(xmlNewResponse);
+		
+		
+		String newKml;
+		newKml=sc.generateKML(xmlNewResponse);
 		System.out.println("DONE!!!!!!!!!!!!!!!!!!!!!!");
-		return Response.status(200).entity(xmlNewResponse).build();
+		return Response.status(200).entity(newKml).build();
 	}
 
 }
