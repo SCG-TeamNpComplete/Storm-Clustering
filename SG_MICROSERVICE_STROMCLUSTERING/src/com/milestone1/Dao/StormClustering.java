@@ -26,6 +26,12 @@ public class StormClustering {
 	public String generateKML(String xmlNewResponse) throws ParseException {
 
 		Test test = new Test();
+		try {
+			Thread.sleep(45000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		String dummy="";
 
 		return "<KMLResponseFromStormClustering>" +"<tags>"+ dummy +"</tags>" + "<ResponseMessageFromPrevious>" + xmlNewResponse
