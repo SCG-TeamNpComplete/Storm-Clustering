@@ -43,11 +43,6 @@ public class StormClustering {
 		sc.generateKML(xmlNewResponse);
 		System.out.println("DONE!!!!!!!!!!!!!!!!!!!!!!");
 		return Response.status(200).entity(xmlNewResponse).build();
-		System.out.println("printing newkml");
-		System.out.println();
-		System.out.println(newKml);
-		System.out.println("new kml end");
-		return Response.status(200).entity(newKml).build();
 
 	}
 
