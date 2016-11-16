@@ -15,6 +15,7 @@ import org.json.JSONException;
 
 import com.milestone1.Service.StrormClusteringService;
 
+
 @Path("/StormClustering")
 public class StormClustering {
 
@@ -25,13 +26,7 @@ public class StormClustering {
 	@Produces("application/xml")
 	public String generateKML(String xmlNewResponse) throws ParseException {
 
-		Test test = new Test();
-		try {
-			Thread.sleep(45000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		//Test test = new Test();
 		String dummy="";
 
 		return "<KMLResponseFromStormClustering>" +"<tags>"+ dummy +"</tags>" + "<ResponseMessageFromPrevious>" + xmlNewResponse
@@ -48,6 +43,12 @@ public class StormClustering {
 		sc.generateKML(xmlNewResponse);
 		System.out.println("DONE!!!!!!!!!!!!!!!!!!!!!!");
 		return Response.status(200).entity(xmlNewResponse).build();
+		System.out.println("printing newkml");
+		System.out.println();
+		System.out.println(newKml);
+		System.out.println("new kml end");
+		return Response.status(200).entity(newKml).build();
+
 	}
 
 }
