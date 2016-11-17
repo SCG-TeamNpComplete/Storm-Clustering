@@ -21,7 +21,7 @@ public class StormClusterInit {
 	public String initZookeeper() throws IOException{
 		
 		//ZookeeperServiceRegistry registry=new ZookeeperServiceRegistry();
-		String endpointURI = "/SG_MICROSERVICE_STROMCLUSTERING/gateway/StormClustering/get";
+		String endpointURI = "http://localhost:8080/SG_MICROSERVICE_STROMCLUSTERING/gateway/StormClustering/get";
 	    //private final String endpointURI = "http://" + serverName + ":" + serverPort + "/catalog/resources/catalog";
 	    //private final String endpointURI = "http://" + WildFlyUtil.getHostName() + ":" + WildFlyUtil.getHostPort() + "/catalog/resources/catalog";
 	    String serviceName = "stormCluster";
@@ -32,7 +32,7 @@ public class StormClusterInit {
 				new RetryNTimes(5, 1000));*/
 		
 		
-		CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("10.0.0.215:2181",
+		CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("localhost:2181",
 				new RetryNTimes(5, 1000));
 		curatorFramework.start();
 		try {
@@ -40,8 +40,7 @@ public class StormClusterInit {
 			ServiceInstance serviceInstance = ServiceInstance.builder().uriSpec(new UriSpec(endpointURI)).address("localhost").port(port).name(serviceName).build();
 			ServiceDiscoveryBuilder.builder(Void.class).basePath("load-balancing-example").client(curatorFramework)
 			.thisInstance(serviceInstance).build().start();
-			
-			
+			return "done SC instance";
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -57,6 +56,6 @@ public class StormClusterInit {
 	    //registry.unregisterService(serviceName, endpointURI);
 	    
 	    //registry.discoverServiceURI(serviceName);
-		return "done";
+		return "udeeeeesssss";
 	}
 }

@@ -31,7 +31,7 @@ public class StormClusterManager {
 	@Produces("text/plain")
 	public String delegate() {
 		//CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("localhost:2181", new RetryNTimes(5, 1000));
-		CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("10.0.0.215:2181", new RetryNTimes(5, 1000));
+		CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("localhost:2181", new RetryNTimes(5, 1000));
 		curatorFramework.start();
 
 		ServiceDiscovery<Void> serviceDiscovery = ServiceDiscoveryBuilder.builder(Void.class).basePath("load-balancing-example").client(curatorFramework).build();
@@ -72,17 +72,19 @@ public class StormClusterManager {
 			String address = instances.get(thisIndex % instances.size()).getId();
 			UriSpec address1 = instances.get(thisIndex % instances.size()).getUriSpec();
 			String url=address1.build();
+			System.out.println("URL from storm cluster manager, instance picked is");
 			System.out.println(url);
 			
-			URIBuilder builder = new URIBuilder();
+			/*URIBuilder builder = new URIBuilder();
 			builder.setScheme("http").setHost("localhost:8080").setPath(url);
 			URI uri = builder.build();
 			//HttpGet httpget = new HttpGet(uri);
-			
+*/			
 			
 			ClientConfig clientConfig = new ClientConfig();
 			Client client = ClientBuilder.newClient(clientConfig);
-			String response =client.target(uri).request().get(String.class);
+			String response =client.target(url).request().get(String.class);
+			System.out.println("REsponse from Strom Clustering service");
 			System.out.println(response);
 			
 			

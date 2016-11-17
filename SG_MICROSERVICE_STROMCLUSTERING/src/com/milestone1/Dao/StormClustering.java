@@ -25,7 +25,7 @@ public class StormClustering {
 	@Path("/get")
 	@Produces("application/xml")
 	public String generateKML(String xmlNewResponse) throws ParseException {
-
+		System.out.println("IN SC /get");
 		//Test test = new Test();
 		String dummy="";
 
