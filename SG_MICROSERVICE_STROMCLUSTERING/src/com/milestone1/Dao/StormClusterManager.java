@@ -1,10 +1,13 @@
 package com.milestone1.Dao;
 
+import java.net.URI;
 import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
 
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -14,6 +17,9 @@ import org.apache.curator.x.discovery.ServiceDiscoveryBuilder;
 import org.apache.curator.x.discovery.ServiceInstance;
 import org.apache.curator.x.discovery.ServiceProvider;
 import org.apache.curator.x.discovery.UriSpec;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.utils.URIBuilder;
+import org.glassfish.jersey.client.ClientConfig;
 
 import com.milestone1.Service.StrormClusteringService;
 
@@ -67,6 +73,22 @@ public class StormClusterManager {
 			UriSpec address1 = instances.get(thisIndex % instances.size()).getUriSpec();
 			String url=address1.build();
 			System.out.println(url);
+			
+			URIBuilder builder = new URIBuilder();
+			builder.setScheme("http").setHost("localhost:8080").setPath(url);
+			URI uri = builder.build();
+			//HttpGet httpget = new HttpGet(uri);
+			
+			
+			ClientConfig clientConfig = new ClientConfig();
+			Client client = ClientBuilder.newClient(clientConfig);
+			String response =client.target(uri).request().get(String.class);
+			System.out.println(response);
+			
+			
+			
+			
+			
 			return address;
 			
 		} catch (Exception e) {

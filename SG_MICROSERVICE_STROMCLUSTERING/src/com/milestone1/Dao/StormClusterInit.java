@@ -21,7 +21,7 @@ public class StormClusterInit {
 	public String initZookeeper() throws IOException{
 		
 		//ZookeeperServiceRegistry registry=new ZookeeperServiceRegistry();
-		String endpointURI = "http://localhost:8080/SG_MICROSERVICE_STROMCLUSTERING/gateway/StormClustering/get";
+		String endpointURI = "/SG_MICROSERVICE_STROMCLUSTERING/gateway/StormClustering/get";
 	    //private final String endpointURI = "http://" + serverName + ":" + serverPort + "/catalog/resources/catalog";
 	    //private final String endpointURI = "http://" + WildFlyUtil.getHostName() + ":" + WildFlyUtil.getHostPort() + "/catalog/resources/catalog";
 	    String serviceName = "stormCluster";
