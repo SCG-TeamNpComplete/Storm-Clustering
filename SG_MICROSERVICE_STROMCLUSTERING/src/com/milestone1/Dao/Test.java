@@ -32,7 +32,7 @@ public class Test{
 		//System.out.println("ClientConfig config1 ");
 		Client client1 = ClientBuilder.newClient(config1);
 		//System.out.println("Client client1 ");
-		WebTarget target1 = client1.target("http://ec2-35-161-48-143.us-west-2.compute.amazonaws.com:65000/forecast_decision").path("json");
+		WebTarget target1 = client1.target("http://ec2-35-160-137-157.us-west-2.compute.amazonaws.com:65000/forecast_decision").path("json");
 		System.out.println("WebTarget");
 		
 		
