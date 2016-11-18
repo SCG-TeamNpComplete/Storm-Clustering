@@ -17,7 +17,6 @@ install:
   - docker ps -a
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push kedargn/stormcluster
-  - cd ..
 
 script: mvn clean install -DskipTests=true
 
