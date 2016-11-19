@@ -26,7 +26,7 @@ public class StormClustering {
 	@Produces("application/xml")
 	public String generateKML(String xmlNewResponse) throws ParseException {
 		System.out.println("IN SC /get");
-		//Test test = new Test();
+		Test test = new Test();
 		String dummy="";
 
 		return "<KMLResponseFromStormClustering>" +"<tags>"+ dummy +"</tags>" + "<ResponseMessageFromPrevious>" + xmlNewResponse
