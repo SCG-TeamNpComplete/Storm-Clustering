@@ -30,8 +30,8 @@ public class StormClusterManager {
 	@Path("/delegate")
 	@Produces("text/plain")
 	public String delegate() {
-		//CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("localhost:2181", new RetryNTimes(5, 1000));
-		CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("149.160.144.17:2181", new RetryNTimes(5, 1000));
+		CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("localhost:2181", new RetryNTimes(5, 1000));
+		//CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("149.160.144.17:2181", new RetryNTimes(5, 1000));
 		curatorFramework.start();
 
 		ServiceDiscovery<Void> serviceDiscovery = ServiceDiscoveryBuilder.builder(Void.class).basePath("load-balancing-example").client(curatorFramework).build();
