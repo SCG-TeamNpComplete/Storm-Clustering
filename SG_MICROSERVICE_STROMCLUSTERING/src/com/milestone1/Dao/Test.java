@@ -1,5 +1,8 @@
 package com.milestone1.Dao;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -9,20 +12,29 @@ import javax.ws.rs.core.Form;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.Response;
 
-
-
-
-
-
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.utils.URIBuilder;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientResponse;
 
 
 public class Test{
 	
-	public Test() {
+	public Test() throws URISyntaxException {
 		
-		MessageToForecast msg=new MessageToForecast();
+		URIBuilder builder = new URIBuilder();
+
+		builder.setScheme("http").setHost("ec2-35-160-137-157.us-west-2.compute.amazonaws.com:11000")
+				.setPath("/SG_MICROSERVICE_SERVICEGATEWAY/gateway/servicegateway/stormcluster");
+		
+		URI uri = builder.build();
+		HttpGet httpget = new HttpGet(uri);
+		ClientConfig clientConfig = new ClientConfig();
+		Client client = ClientBuilder.newClient(clientConfig);
+		String response =client.target(uri).request().get(String.class);
+		System.out.println("response from storm clusterin"+response);
+		
+		/*MessageToForecast msg=new MessageToForecast();
 		msg.setReqId(10);
     	msg.setUserId("soumya");
 		
@@ -41,7 +53,7 @@ public class Test{
 		responsefrom=target1.request().post(Entity.entity(msg, "application/json"),String.class);
 		//System.out.println(response1.toString());
 		System.out.println();
-		System.out.println(responsefrom);
+		System.out.println(responsefrom);*/
 		
 		/**************************/
 		

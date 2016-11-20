@@ -1,5 +1,6 @@
 package com.milestone1.Dao;
 
+import java.net.URISyntaxException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -24,9 +25,11 @@ public class StormClustering {
 	@GET
 	@Path("/get")
 	@Produces("application/xml")
-	public String generateKML(String xmlNewResponse) throws ParseException {
+	public String generateKML(String xmlNewResponse) throws ParseException, URISyntaxException {
 		System.out.println("IN SC /get");
-		//Test test = new Test();
+		Test test = new Test();
+		
+		
 		String dummy="";
 
 		return "<KMLResponseFromStormClustering>" +"<tags>"+ dummy +"</tags>" + "<ResponseMessageFromPrevious>" + xmlNewResponse
@@ -36,7 +39,7 @@ public class StormClustering {
 	@POST
 	@Path("/send")
 	@Consumes("application/xml")
-	public Response json(String xmlResponse) throws ParseException, JSONException {
+	public Response json(String xmlResponse) throws ParseException, JSONException, URISyntaxException {
 		StormClustering sc = new StormClustering();
 		String xmlNewResponse = xmlResponse;
 		System.out.println("data in Clustering" + xmlNewResponse);
