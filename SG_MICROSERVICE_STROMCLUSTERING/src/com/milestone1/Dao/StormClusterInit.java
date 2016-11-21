@@ -1,6 +1,9 @@
 package com.milestone1.Dao;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,9 +23,24 @@ public class StormClusterInit extends HttpServlet {
 
 	@Override
 	public void init() throws ServletException {
+		
+		String ip=null;
+    	try
+    	{
+	    	URL whatismyip = new URL("http://checkip.amazonaws.com");
+			BufferedReader in = new BufferedReader(new InputStreamReader(
+							whatismyip.openStream()));
+	
+			ip = in.readLine(); //you get the IP as a String
+			System.out.println(ip);
+    	}
+    	catch (Exception exception)
+    	{
+    		exception.printStackTrace();
+    	}
 
 		// ZookeeperServiceRegistry registry=new ZookeeperServiceRegistry();
-		String endpointURI = "http://localhost:8080/SG_MICROSERVICE_STROMCLUSTERING/gateway/StormClustering/get";
+		String endpointURI = "http://"+ip+":8080/SG_MICROSERVICE_STROMCLUSTERING/gateway/StormClustering/get";
 		// private final String endpointURI = "http://" + serverName + ":" +
 		// serverPort + "/catalog/resources/catalog";
 		// private final String endpointURI = "http://" +
@@ -33,9 +51,12 @@ public class StormClusterInit extends HttpServlet {
 		int port = 8080;
 
 		
-		  CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("localhost:2181", new RetryNTimes(5, 1000));
+		  /*CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("localhost:2181", new RetryNTimes(5, 1000));
+		  curatorFramework.start();*/
+		  
+		  CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("ec2-35-161-48-143.us-west-2.compute.amazonaws.com:2181", new RetryNTimes(5, 1000));
 		  curatorFramework.start();
-
+		  
 		/*CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient("149.160.144.17:2181",
 				new RetryNTimes(5, 1000));
 		curatorFramework.start();*/
