@@ -40,7 +40,7 @@ public class StormClusterInit extends HttpServlet {
     	}
 
 		// ZookeeperServiceRegistry registry=new ZookeeperServiceRegistry();
-		String endpointURI = "http://"+ip+":8080/SG_MICROSERVICE_STROMCLUSTERING/gateway/StormClustering/get";
+		String endpointURI = "http://"+ip+":8888/SG_MICROSERVICE_STROMCLUSTERING/gateway/StormClustering/get";
 		// private final String endpointURI = "http://" + serverName + ":" +
 		// serverPort + "/catalog/resources/catalog";
 		// private final String endpointURI = "http://" +
