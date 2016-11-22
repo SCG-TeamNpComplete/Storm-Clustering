@@ -24,7 +24,7 @@ public class Test{
 		
 		URIBuilder builder = new URIBuilder();
 
-		builder.setScheme("http").setHost("ec2-35-160-137-157.us-west-2.compute.amazonaws.com:11000")
+		builder.setScheme("http").setHost("ec2-35-161-48-143.us-west-2.compute.amazonaws.com:11000")
 				.setPath("/SG_MICROSERVICE_SERVICEGATEWAY/gateway/servicegateway/stormcluster");
 		
 		URI uri = builder.build();
