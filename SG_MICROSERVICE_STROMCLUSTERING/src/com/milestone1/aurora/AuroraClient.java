@@ -95,5 +95,6 @@ public class AuroraClient {
 
         AuroraThriftClient client = AuroraThriftClient.getAuroraThriftClient(Constants.AURORA_SCHEDULER_PROP_FILE);
         ResponseBean response = client.createJob(jobConfig);
+        System.out.println(response);
     }
 }
