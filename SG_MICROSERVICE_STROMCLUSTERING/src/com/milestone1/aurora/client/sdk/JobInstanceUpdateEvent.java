@@ -5,7 +5,7 @@
  *
  * @generated
  */
-package iu.edu.teambash.aurora.client.sdk;
+package com.milestone1.aurora.client.sdk;
 
 import org.apache.thrift.EncodingUtils;
 import org.apache.thrift.protocol.TTupleProtocol;
@@ -544,7 +544,7 @@ public class JobInstanceUpdateEvent implements org.apache.thrift.TBase<JobInstan
                         break;
                     case 3: // ACTION
                         if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                            struct.action = iu.edu.teambash.aurora.client.sdk.JobUpdateAction.findByValue(iprot.readI32());
+                            struct.action = com.milestone1.aurora.client.sdk.JobUpdateAction.findByValue(iprot.readI32());
                             struct.setActionIsSet(true);
                         } else {
                             org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -628,7 +628,7 @@ public class JobInstanceUpdateEvent implements org.apache.thrift.TBase<JobInstan
                 struct.setTimestampMsIsSet(true);
             }
             if (incoming.get(2)) {
-                struct.action = iu.edu.teambash.aurora.client.sdk.JobUpdateAction.findByValue(iprot.readI32());
+                struct.action = com.milestone1.aurora.client.sdk.JobUpdateAction.findByValue(iprot.readI32());
                 struct.setActionIsSet(true);
             }
         }

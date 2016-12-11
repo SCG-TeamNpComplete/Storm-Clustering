@@ -5,7 +5,7 @@
  *
  * @generated
  */
-package iu.edu.teambash.aurora.client.sdk;
+package com.milestone1.aurora.client.sdk;
 
 import org.apache.thrift.EncodingUtils;
 import org.apache.thrift.protocol.TTupleProtocol;
@@ -637,7 +637,7 @@ public class TaskEvent implements org.apache.thrift.TBase<TaskEvent, TaskEvent._
                         break;
                     case 2: // STATUS
                         if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                            struct.status = iu.edu.teambash.aurora.client.sdk.ScheduleStatus.findByValue(iprot.readI32());
+                            struct.status = com.milestone1.aurora.client.sdk.ScheduleStatus.findByValue(iprot.readI32());
                             struct.setStatusIsSet(true);
                         } else {
                             org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -750,7 +750,7 @@ public class TaskEvent implements org.apache.thrift.TBase<TaskEvent, TaskEvent._
                 struct.setTimestampIsSet(true);
             }
             if (incoming.get(1)) {
-                struct.status = iu.edu.teambash.aurora.client.sdk.ScheduleStatus.findByValue(iprot.readI32());
+                struct.status = com.milestone1.aurora.client.sdk.ScheduleStatus.findByValue(iprot.readI32());
                 struct.setStatusIsSet(true);
             }
             if (incoming.get(2)) {

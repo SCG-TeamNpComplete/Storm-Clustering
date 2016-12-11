@@ -5,7 +5,7 @@
  *
  * @generated
  */
-package iu.edu.teambash.aurora.client.sdk;
+package com.milestone1.aurora.client.sdk;
 
 import org.apache.thrift.EncodingUtils;
 import org.apache.thrift.protocol.TTupleProtocol;
@@ -864,7 +864,7 @@ public class JobConfiguration implements org.apache.thrift.TBase<JobConfiguratio
                         break;
                     case 5: // CRON_COLLISION_POLICY
                         if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                            struct.cronCollisionPolicy = iu.edu.teambash.aurora.client.sdk.CronCollisionPolicy.findByValue(iprot.readI32());
+                            struct.cronCollisionPolicy = com.milestone1.aurora.client.sdk.CronCollisionPolicy.findByValue(iprot.readI32());
                             struct.setCronCollisionPolicyIsSet(true);
                         } else {
                             org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -1008,7 +1008,7 @@ public class JobConfiguration implements org.apache.thrift.TBase<JobConfiguratio
                 struct.setCronScheduleIsSet(true);
             }
             if (incoming.get(3)) {
-                struct.cronCollisionPolicy = iu.edu.teambash.aurora.client.sdk.CronCollisionPolicy.findByValue(iprot.readI32());
+                struct.cronCollisionPolicy = com.milestone1.aurora.client.sdk.CronCollisionPolicy.findByValue(iprot.readI32());
                 struct.setCronCollisionPolicyIsSet(true);
             }
             if (incoming.get(4)) {

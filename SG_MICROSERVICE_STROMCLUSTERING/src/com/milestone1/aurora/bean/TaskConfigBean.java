@@ -1,4 +1,4 @@
-package iu.edu.teambash.aurora.bean;
+package com.milestone1.aurora.bean;
 
 import java.util.HashSet;
 import java.util.Set;

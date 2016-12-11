@@ -5,7 +5,7 @@
  *
  * @generated
  */
-package iu.edu.teambash.aurora.client.sdk;
+package com.milestone1.aurora.client.sdk;
 
 import org.apache.thrift.EncodingUtils;
 import org.apache.thrift.protocol.TTupleProtocol;
@@ -970,7 +970,7 @@ public class JobUpdateQuery implements org.apache.thrift.TBase<JobUpdateQuery, J
                                 struct.updateStatuses = new HashSet<JobUpdateStatus>(2 * _set254.size);
                                 JobUpdateStatus _elem255;
                                 for (int _i256 = 0; _i256 < _set254.size; ++_i256) {
-                                    _elem255 = iu.edu.teambash.aurora.client.sdk.JobUpdateStatus.findByValue(iprot.readI32());
+                                    _elem255 = com.milestone1.aurora.client.sdk.JobUpdateStatus.findByValue(iprot.readI32());
                                     struct.updateStatuses.add(_elem255);
                                 }
                                 iprot.readSetEnd();
@@ -1144,7 +1144,7 @@ public class JobUpdateQuery implements org.apache.thrift.TBase<JobUpdateQuery, J
                     struct.updateStatuses = new HashSet<JobUpdateStatus>(2 * _set259.size);
                     JobUpdateStatus _elem260;
                     for (int _i261 = 0; _i261 < _set259.size; ++_i261) {
-                        _elem260 = iu.edu.teambash.aurora.client.sdk.JobUpdateStatus.findByValue(iprot.readI32());
+                        _elem260 = com.milestone1.aurora.client.sdk.JobUpdateStatus.findByValue(iprot.readI32());
                         struct.updateStatuses.add(_elem260);
                     }
                 }

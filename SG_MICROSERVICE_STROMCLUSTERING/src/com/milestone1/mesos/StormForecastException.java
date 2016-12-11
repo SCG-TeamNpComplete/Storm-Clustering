@@ -1,4 +1,4 @@
-package iu.edu.teambash.mesos;
+package com.milestone1.mesos;
 
 public class StormForecastException extends RuntimeException {
 

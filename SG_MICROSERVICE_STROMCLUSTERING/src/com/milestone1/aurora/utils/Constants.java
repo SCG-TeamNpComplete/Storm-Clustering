@@ -1,4 +1,4 @@
-package iu.edu.teambash.aurora.utils;
+package com.milestone1.aurora.utils;
 
 public class Constants {
 

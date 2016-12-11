@@ -1,6 +1,6 @@
-package iu.edu.teambash.aurora.bean;
+package com.milestone1.aurora.bean;
 
-import iu.edu.teambash.aurora.utils.ResponseCodeEnum;
+import com.milestone1.aurora.utils.ResponseCodeEnum;
 
 public class ResponseBean {
 

@@ -1,7 +1,7 @@
-package iu.edu.teambash.aurora.client;
+package com.milestone1.aurora.client;
 
-import iu.edu.teambash.aurora.client.sdk.AuroraSchedulerManager;
-import iu.edu.teambash.aurora.client.sdk.ReadOnlyScheduler;
+import com.milestone1.aurora.client.sdk.AuroraSchedulerManager;
+import com.milestone1.aurora.client.sdk.ReadOnlyScheduler;
 import org.apache.thrift.protocol.TJSONProtocol;
 import org.apache.thrift.protocol.TProtocol;
 import org.apache.thrift.transport.THttpClient;

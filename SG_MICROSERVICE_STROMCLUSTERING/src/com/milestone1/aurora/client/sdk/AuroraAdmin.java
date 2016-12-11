@@ -5,7 +5,7 @@
  *
  * @generated
  */
-package iu.edu.teambash.aurora.client.sdk;
+package com.milestone1.aurora.client.sdk;
 
 import org.apache.thrift.TException;
 import org.apache.thrift.async.AsyncMethodCallback;
@@ -3645,7 +3645,7 @@ public class AuroraAdmin {
                             break;
                         case 2: // STATUS
                             if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                                struct.status = iu.edu.teambash.aurora.client.sdk.ScheduleStatus.findByValue(iprot.readI32());
+                                struct.status = com.milestone1.aurora.client.sdk.ScheduleStatus.findByValue(iprot.readI32());
                                 struct.setStatusIsSet(true);
                             } else {
                                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -3718,7 +3718,7 @@ public class AuroraAdmin {
                     struct.setTaskIdIsSet(true);
                 }
                 if (incoming.get(1)) {
-                    struct.status = iu.edu.teambash.aurora.client.sdk.ScheduleStatus.findByValue(iprot.readI32());
+                    struct.status = com.milestone1.aurora.client.sdk.ScheduleStatus.findByValue(iprot.readI32());
                     struct.setStatusIsSet(true);
                 }
             }

@@ -1,10 +1,10 @@
-package iu.edu.teambash.aurora;
+package com.milestone1.aurora;
 
-import iu.edu.teambash.aurora.bean.*;
-import iu.edu.teambash.aurora.client.AuroraThriftClient;
-import iu.edu.teambash.aurora.client.sdk.*;
-import iu.edu.teambash.aurora.utils.AuroraThriftClientUtil;
-import iu.edu.teambash.aurora.utils.Constants;
+import com.milestone1.aurora.bean.*;
+import com.milestone1.aurora.client.AuroraThriftClient;
+import com.milestone1.aurora.client.sdk.*;
+import com.milestone1.aurora.utils.AuroraThriftClientUtil;
+import com.milestone1.aurora.utils.Constants;
 import org.apache.log4j.Logger;
 import org.apache.thrift.TException;
 
@@ -24,7 +24,9 @@ public class AuroraClient {
      */
     public void getJobSummary(ReadOnlyScheduler.Client client) {
         try {
-            Response response = client.getJobs("centos");
+            
+        	//1
+        	Response response = client.getJobs("centos");
             logger.info("Response status: " + response.getResponseCode().name());
             if (response.getResult().isSetGetJobsResult()) {
                 GetJobsResult result = response.getResult().getGetJobsResult();
@@ -62,7 +64,7 @@ public class AuroraClient {
     }
 
     public void getJobDetails() throws Exception {
-        JobKeyBean jobKey = new JobKeyBean("devel", "team-bash", "bash_wrf");
+        JobKeyBean jobKey = new JobKeyBean("devel", "team-npcomplete", "bash_wrf-npcomplete");
 
         JobDetailsResponseBean responseBean = (JobDetailsResponseBean) AuroraThriftClient.getAuroraThriftClient(Constants.AURORA_SCHEDULER_PROP_FILE).getJobDetails(jobKey);
         logger.info(responseBean.toString());
@@ -70,12 +72,12 @@ public class AuroraClient {
 
     public void createJob() throws Exception {
 
-        JobKeyBean jobKey = new JobKeyBean("devel", "team-bash", "bash_wrf");
-        IdentityBean owner = new IdentityBean("team-bash");
+    	JobKeyBean jobKey = new JobKeyBean("devel", "team-npcomplete", "bash_wrf-npcomplete");
+        IdentityBean owner = new IdentityBean("team-npcomplete");
 
         //ProcessBean proc0 = new ProcessBean("process_0", "docker rm -f ncarwrfsandy; docker rm -f postproc;", false);
-        ProcessBean proc1 = new ProcessBean("process_1", "docker run -i --volumes-from wpsgeog --volumes-from wrfinputsandy -v ~/wrfoutput:/wrfoutput --name ncarwrfsandy bigwxwrf/ncar-wrf /wrf/run-wrf", false);
-        ProcessBean proc2 = new ProcessBean("process_2", "docker run -i --rm=true -v ~/wrfoutput:/wrfoutput --name postproc bigwxwrf/ncar-ncl", false);
+        ProcessBean proc1 = new ProcessBean("process_1", "docker run -i --volumes-from wpsgeog --volumes-from wrfinputsandy -v ~/wrfoutput:/wrfoutput --name npcomplete-ncarwrfsandy bigwxwrf/ncar-wrf /wrf/run-wrf", false);
+        ProcessBean proc2 = new ProcessBean("process_2", "docker run -i --rm=true -v ~/wrfoutput:/wrfoutput --name npcomplete-postproc bigwxwrf/ncar-ncl", false);
         Set<ProcessBean> processes = new LinkedHashSet<>();
         //processes.add(proc0);
         processes.add(proc1);
@@ -83,7 +85,7 @@ public class AuroraClient {
 
         ResourceBean resources = new ResourceBean(0.2, 200, 200);
 
-        TaskConfigBean taskConfig = new TaskConfigBean("run_forecast_task", processes, resources);
+        TaskConfigBean taskConfig = new TaskConfigBean("run_forecast_task-npComplete", processes, resources);
         JobConfigBean jobConfig = new JobConfigBean(jobKey, owner, taskConfig, "example");
 
         String executorConfigJson = AuroraThriftClientUtil.getExecutorConfigJson(jobConfig);

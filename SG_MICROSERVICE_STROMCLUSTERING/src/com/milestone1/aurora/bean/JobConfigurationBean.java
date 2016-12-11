@@ -1,7 +1,7 @@
-package iu.edu.teambash.aurora.bean;
+package com.milestone1.aurora.bean;
 
-import iu.edu.teambash.aurora.client.sdk.Identity;
-import iu.edu.teambash.aurora.client.sdk.JobKey;
+import com.milestone1.aurora.client.sdk.Identity;
+import com.milestone1.aurora.client.sdk.JobKey;
 
 public class JobConfigurationBean {
 

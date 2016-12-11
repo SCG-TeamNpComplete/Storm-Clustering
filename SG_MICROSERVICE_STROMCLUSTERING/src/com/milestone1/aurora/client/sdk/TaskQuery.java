@@ -5,7 +5,7 @@
  *
  * @generated
  */
-package iu.edu.teambash.aurora.client.sdk;
+package com.milestone1.aurora.client.sdk;
 
 import org.apache.thrift.EncodingUtils;
 import org.apache.thrift.protocol.TTupleProtocol;
@@ -1210,7 +1210,7 @@ public class TaskQuery implements org.apache.thrift.TBase<TaskQuery, TaskQuery._
                                 struct.statuses = new HashSet<ScheduleStatus>(2 * _set153.size);
                                 ScheduleStatus _elem154;
                                 for (int _i155 = 0; _i155 < _set153.size; ++_i155) {
-                                    _elem154 = iu.edu.teambash.aurora.client.sdk.ScheduleStatus.findByValue(iprot.readI32());
+                                    _elem154 = com.milestone1.aurora.client.sdk.ScheduleStatus.findByValue(iprot.readI32());
                                     struct.statuses.add(_elem154);
                                 }
                                 iprot.readSetEnd();
@@ -1519,7 +1519,7 @@ public class TaskQuery implements org.apache.thrift.TBase<TaskQuery, TaskQuery._
                     struct.statuses = new HashSet<ScheduleStatus>(2 * _set178.size);
                     ScheduleStatus _elem179;
                     for (int _i180 = 0; _i180 < _set178.size; ++_i180) {
-                        _elem179 = iu.edu.teambash.aurora.client.sdk.ScheduleStatus.findByValue(iprot.readI32());
+                        _elem179 = com.milestone1.aurora.client.sdk.ScheduleStatus.findByValue(iprot.readI32());
                         struct.statuses.add(_elem179);
                     }
                 }

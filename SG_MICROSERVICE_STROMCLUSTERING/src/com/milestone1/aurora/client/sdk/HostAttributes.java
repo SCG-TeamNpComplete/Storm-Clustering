@@ -5,7 +5,7 @@
  *
  * @generated
  */
-package iu.edu.teambash.aurora.client.sdk;
+package com.milestone1.aurora.client.sdk;
 
 import org.apache.thrift.protocol.TTupleProtocol;
 import org.apache.thrift.scheme.IScheme;
@@ -630,7 +630,7 @@ public class HostAttributes implements org.apache.thrift.TBase<HostAttributes, H
                         break;
                     case 3: // MODE
                         if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                            struct.mode = iu.edu.teambash.aurora.client.sdk.MaintenanceMode.findByValue(iprot.readI32());
+                            struct.mode = com.milestone1.aurora.client.sdk.MaintenanceMode.findByValue(iprot.readI32());
                             struct.setModeIsSet(true);
                         } else {
                             org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -761,7 +761,7 @@ public class HostAttributes implements org.apache.thrift.TBase<HostAttributes, H
                 struct.setAttributesIsSet(true);
             }
             if (incoming.get(2)) {
-                struct.mode = iu.edu.teambash.aurora.client.sdk.MaintenanceMode.findByValue(iprot.readI32());
+                struct.mode = com.milestone1.aurora.client.sdk.MaintenanceMode.findByValue(iprot.readI32());
                 struct.setModeIsSet(true);
             }
             if (incoming.get(3)) {

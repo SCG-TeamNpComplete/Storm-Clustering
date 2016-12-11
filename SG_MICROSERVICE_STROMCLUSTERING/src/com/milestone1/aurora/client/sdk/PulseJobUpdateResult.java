@@ -5,7 +5,7 @@
  *
  * @generated
  */
-package iu.edu.teambash.aurora.client.sdk;
+package com.milestone1.aurora.client.sdk;
 
 import org.apache.thrift.protocol.TTupleProtocol;
 import org.apache.thrift.scheme.IScheme;
@@ -331,7 +331,7 @@ public class PulseJobUpdateResult implements org.apache.thrift.TBase<PulseJobUpd
                 switch (schemeField.id) {
                     case 1: // STATUS
                         if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                            struct.status = iu.edu.teambash.aurora.client.sdk.JobUpdatePulseStatus.findByValue(iprot.readI32());
+                            struct.status = com.milestone1.aurora.client.sdk.JobUpdatePulseStatus.findByValue(iprot.readI32());
                             struct.setStatusIsSet(true);
                         } else {
                             org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -389,7 +389,7 @@ public class PulseJobUpdateResult implements org.apache.thrift.TBase<PulseJobUpd
             TTupleProtocol iprot = (TTupleProtocol) prot;
             BitSet incoming = iprot.readBitSet(1);
             if (incoming.get(0)) {
-                struct.status = iu.edu.teambash.aurora.client.sdk.JobUpdatePulseStatus.findByValue(iprot.readI32());
+                struct.status = com.milestone1.aurora.client.sdk.JobUpdatePulseStatus.findByValue(iprot.readI32());
                 struct.setStatusIsSet(true);
             }
         }

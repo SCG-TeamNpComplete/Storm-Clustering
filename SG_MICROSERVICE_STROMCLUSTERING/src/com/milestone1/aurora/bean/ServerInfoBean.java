@@ -1,4 +1,4 @@
-package iu.edu.teambash.aurora.bean;
+package com.milestone1.aurora.bean;
 
 public class ServerInfoBean {
 

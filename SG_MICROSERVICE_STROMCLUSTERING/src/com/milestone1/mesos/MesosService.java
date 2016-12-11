@@ -1,6 +1,6 @@
-package iu.edu.teambash.mesos;
+package com.milestone1.mesos;
 
-import iu.edu.teambash.aurora.AuroraClient;
+import com.milestone1.aurora.AuroraClient;
 
 import java.io.IOException;
 

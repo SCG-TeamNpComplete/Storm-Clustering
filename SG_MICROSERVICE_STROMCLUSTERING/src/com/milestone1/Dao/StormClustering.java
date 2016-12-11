@@ -10,11 +10,14 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.json.JSONException;
 
 import com.milestone1.Service.StrormClusteringService;
+import com.milestone1.aurora.AuroraClient;
+import com.milestone1.mesos.MesosService;
 
 
 @Path("/StormClustering")
@@ -27,14 +30,15 @@ public class StormClustering {
 	@Produces("application/xml")
 	public String generateKML(String xmlNewResponse) throws ParseException, URISyntaxException {
 		System.out.println("IN SC /get");
-		Test test = new Test();
-		
-		
+		Test test = new Test();	
 		String dummy="";
 
 		return "<KMLResponseFromStormClustering>" +"<tags>"+ dummy +"</tags>" + "<ResponseMessageFromPrevious>" + xmlNewResponse
 				+ "</ResponseMessageFromPrevious>" +  "</KMLResponseFromStormClustering>";
 	}
+	
+	
+	
 
 	@POST
 	@Path("/send")

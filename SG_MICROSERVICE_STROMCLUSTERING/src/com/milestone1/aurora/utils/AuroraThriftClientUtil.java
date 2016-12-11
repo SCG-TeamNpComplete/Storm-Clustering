@@ -1,8 +1,8 @@
-package iu.edu.teambash.aurora.utils;
+package com.milestone1.aurora.utils;
 
 
-import iu.edu.teambash.aurora.bean.*;
-import iu.edu.teambash.aurora.client.sdk.*;
+import com.milestone1.aurora.bean.*;
+import com.milestone1.aurora.client.sdk.*;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONObject;
 import org.slf4j.Logger;

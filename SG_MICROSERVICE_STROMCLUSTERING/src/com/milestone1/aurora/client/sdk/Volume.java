@@ -5,7 +5,7 @@
  *
  * @generated
  */
-package iu.edu.teambash.aurora.client.sdk;
+package com.milestone1.aurora.client.sdk;
 
 import org.apache.thrift.protocol.TTupleProtocol;
 import org.apache.thrift.scheme.IScheme;
@@ -547,7 +547,7 @@ public class Volume implements org.apache.thrift.TBase<Volume, Volume._Fields>, 
                         break;
                     case 3: // MODE
                         if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                            struct.mode = iu.edu.teambash.aurora.client.sdk.Mode.findByValue(iprot.readI32());
+                            struct.mode = com.milestone1.aurora.client.sdk.Mode.findByValue(iprot.readI32());
                             struct.setModeIsSet(true);
                         } else {
                             org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -635,7 +635,7 @@ public class Volume implements org.apache.thrift.TBase<Volume, Volume._Fields>, 
                 struct.setHostPathIsSet(true);
             }
             if (incoming.get(2)) {
-                struct.mode = iu.edu.teambash.aurora.client.sdk.Mode.findByValue(iprot.readI32());
+                struct.mode = com.milestone1.aurora.client.sdk.Mode.findByValue(iprot.readI32());
                 struct.setModeIsSet(true);
             }
         }

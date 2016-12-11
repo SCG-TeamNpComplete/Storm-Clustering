@@ -5,7 +5,7 @@
  *
  * @generated
  */
-package iu.edu.teambash.aurora.client.sdk;
+package com.milestone1.aurora.client.sdk;
 
 import org.apache.thrift.protocol.TTupleProtocol;
 import org.apache.thrift.scheme.IScheme;
@@ -632,7 +632,7 @@ public class Response implements org.apache.thrift.TBase<Response, Response._Fie
                 switch (schemeField.id) {
                     case 1: // RESPONSE_CODE
                         if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                            struct.responseCode = iu.edu.teambash.aurora.client.sdk.ResponseCode.findByValue(iprot.readI32());
+                            struct.responseCode = com.milestone1.aurora.client.sdk.ResponseCode.findByValue(iprot.readI32());
                             struct.setResponseCodeIsSet(true);
                         } else {
                             org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -772,7 +772,7 @@ public class Response implements org.apache.thrift.TBase<Response, Response._Fie
             TTupleProtocol iprot = (TTupleProtocol) prot;
             BitSet incoming = iprot.readBitSet(4);
             if (incoming.get(0)) {
-                struct.responseCode = iu.edu.teambash.aurora.client.sdk.ResponseCode.findByValue(iprot.readI32());
+                struct.responseCode = com.milestone1.aurora.client.sdk.ResponseCode.findByValue(iprot.readI32());
                 struct.setResponseCodeIsSet(true);
             }
             if (incoming.get(1)) {

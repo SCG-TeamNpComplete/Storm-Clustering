@@ -5,7 +5,7 @@
  *
  * @generated
  */
-package iu.edu.teambash.aurora.client.sdk;
+package com.milestone1.aurora.client.sdk;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -30,49 +30,49 @@ public class aurora_apiConstants {
     public static final String TASK_FILESYSTEM_MOUNT_POINT = "taskfs";
 
     static {
-        ACTIVE_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.ASSIGNED);
-        ACTIVE_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.DRAINING);
-        ACTIVE_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.KILLING);
-        ACTIVE_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.PENDING);
-        ACTIVE_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.PREEMPTING);
-        ACTIVE_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.RESTARTING);
-        ACTIVE_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.RUNNING);
-        ACTIVE_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.STARTING);
-        ACTIVE_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.THROTTLED);
+        ACTIVE_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.ASSIGNED);
+        ACTIVE_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.DRAINING);
+        ACTIVE_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.KILLING);
+        ACTIVE_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.PENDING);
+        ACTIVE_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.PREEMPTING);
+        ACTIVE_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.RESTARTING);
+        ACTIVE_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.RUNNING);
+        ACTIVE_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.STARTING);
+        ACTIVE_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.THROTTLED);
     }
 
     static {
-        SLAVE_ASSIGNED_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.ASSIGNED);
-        SLAVE_ASSIGNED_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.DRAINING);
-        SLAVE_ASSIGNED_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.KILLING);
-        SLAVE_ASSIGNED_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.PREEMPTING);
-        SLAVE_ASSIGNED_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.RESTARTING);
-        SLAVE_ASSIGNED_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.RUNNING);
-        SLAVE_ASSIGNED_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.STARTING);
+        SLAVE_ASSIGNED_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.ASSIGNED);
+        SLAVE_ASSIGNED_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.DRAINING);
+        SLAVE_ASSIGNED_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.KILLING);
+        SLAVE_ASSIGNED_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.PREEMPTING);
+        SLAVE_ASSIGNED_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.RESTARTING);
+        SLAVE_ASSIGNED_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.RUNNING);
+        SLAVE_ASSIGNED_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.STARTING);
     }
 
     static {
-        LIVE_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.KILLING);
-        LIVE_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.PREEMPTING);
-        LIVE_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.RESTARTING);
-        LIVE_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.DRAINING);
-        LIVE_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.RUNNING);
+        LIVE_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.KILLING);
+        LIVE_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.PREEMPTING);
+        LIVE_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.RESTARTING);
+        LIVE_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.DRAINING);
+        LIVE_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.RUNNING);
     }
 
     static {
-        TERMINAL_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.FAILED);
-        TERMINAL_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.FINISHED);
-        TERMINAL_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.KILLED);
-        TERMINAL_STATES.add(iu.edu.teambash.aurora.client.sdk.ScheduleStatus.LOST);
+        TERMINAL_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.FAILED);
+        TERMINAL_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.FINISHED);
+        TERMINAL_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.KILLED);
+        TERMINAL_STATES.add(com.milestone1.aurora.client.sdk.ScheduleStatus.LOST);
     }
 
     static {
-        ACTIVE_JOB_UPDATE_STATES.add(iu.edu.teambash.aurora.client.sdk.JobUpdateStatus.ROLLING_FORWARD);
-        ACTIVE_JOB_UPDATE_STATES.add(iu.edu.teambash.aurora.client.sdk.JobUpdateStatus.ROLLING_BACK);
-        ACTIVE_JOB_UPDATE_STATES.add(iu.edu.teambash.aurora.client.sdk.JobUpdateStatus.ROLL_FORWARD_PAUSED);
-        ACTIVE_JOB_UPDATE_STATES.add(iu.edu.teambash.aurora.client.sdk.JobUpdateStatus.ROLL_BACK_PAUSED);
-        ACTIVE_JOB_UPDATE_STATES.add(iu.edu.teambash.aurora.client.sdk.JobUpdateStatus.ROLL_FORWARD_AWAITING_PULSE);
-        ACTIVE_JOB_UPDATE_STATES.add(iu.edu.teambash.aurora.client.sdk.JobUpdateStatus.ROLL_BACK_AWAITING_PULSE);
+        ACTIVE_JOB_UPDATE_STATES.add(com.milestone1.aurora.client.sdk.JobUpdateStatus.ROLLING_FORWARD);
+        ACTIVE_JOB_UPDATE_STATES.add(com.milestone1.aurora.client.sdk.JobUpdateStatus.ROLLING_BACK);
+        ACTIVE_JOB_UPDATE_STATES.add(com.milestone1.aurora.client.sdk.JobUpdateStatus.ROLL_FORWARD_PAUSED);
+        ACTIVE_JOB_UPDATE_STATES.add(com.milestone1.aurora.client.sdk.JobUpdateStatus.ROLL_BACK_PAUSED);
+        ACTIVE_JOB_UPDATE_STATES.add(com.milestone1.aurora.client.sdk.JobUpdateStatus.ROLL_FORWARD_AWAITING_PULSE);
+        ACTIVE_JOB_UPDATE_STATES.add(com.milestone1.aurora.client.sdk.JobUpdateStatus.ROLL_BACK_AWAITING_PULSE);
     }
 
 }

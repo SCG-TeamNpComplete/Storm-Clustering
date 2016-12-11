@@ -1,13 +1,13 @@
-package iu.edu.teambash.aurora.client;
+package com.milestone1.aurora.client;
 
-import iu.edu.teambash.aurora.bean.JobConfigBean;
-import iu.edu.teambash.aurora.bean.JobDetailsResponseBean;
-import iu.edu.teambash.aurora.bean.JobKeyBean;
-import iu.edu.teambash.aurora.bean.ResponseBean;
-import iu.edu.teambash.aurora.client.sdk.*;
-import iu.edu.teambash.aurora.utils.AuroraThriftClientUtil;
-import iu.edu.teambash.aurora.utils.Constants;
-import iu.edu.teambash.aurora.utils.ResponseResultType;
+import com.milestone1.aurora.bean.JobConfigBean;
+import com.milestone1.aurora.bean.JobDetailsResponseBean;
+import com.milestone1.aurora.bean.JobKeyBean;
+import com.milestone1.aurora.bean.ResponseBean;
+import com.milestone1.aurora.client.sdk.*;
+import com.milestone1.aurora.utils.AuroraThriftClientUtil;
+import com.milestone1.aurora.utils.Constants;
+import com.milestone1.aurora.utils.ResponseResultType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
