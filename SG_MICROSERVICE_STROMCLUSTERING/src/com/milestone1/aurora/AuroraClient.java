@@ -71,6 +71,8 @@ public class AuroraClient {
     public void createJob() throws Exception 
     {
 
+        System.out.println("Inside create job");
+
     	JobKeyBean jobKey = new JobKeyBean("devel", "team-npcomplete", "bash_wrf-npcomplete");
         IdentityBean owner = new IdentityBean("team-npcomplete");
 
@@ -92,5 +94,6 @@ public class AuroraClient {
 
         AuroraThriftClient client = AuroraThriftClient.getAuroraThriftClient(Constants.AURORA_SCHEDULER_PROP_FILE);
         ResponseBean response = client.createJob(jobConfig);
+        System.out.println("response for createJob "+response);
     }
 }
