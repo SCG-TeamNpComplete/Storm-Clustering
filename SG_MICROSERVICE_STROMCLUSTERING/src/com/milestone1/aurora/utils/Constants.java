@@ -5,7 +5,7 @@ public class Constants {
     /**
      * The Constant AURORA_SCHEDULER_PROP_FILE.
      */
-    public static final String AURORA_SCHEDULER_PROP_FILE = "aurora-scheduler.properties";
+    public static final String AURORA_SCHEDULER_PROP_FILE = "resources/aurora-scheduler.properties";
 
     /**
      * The Constant AURORA_SCHEDULER_HOST.

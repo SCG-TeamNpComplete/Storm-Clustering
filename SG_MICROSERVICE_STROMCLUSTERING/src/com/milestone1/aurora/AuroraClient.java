@@ -24,9 +24,7 @@ public class AuroraClient {
      */
     public void getJobSummary(ReadOnlyScheduler.Client client) {
         try {
-            
-        	//1
-        	Response response = client.getJobs("centos");
+        	Response response = client.getJobs("team-npcomplete");
             logger.info("Response status: " + response.getResponseCode().name());
             if (response.getResult().isSetGetJobsResult()) {
                 GetJobsResult result = response.getResult().getGetJobsResult();
@@ -70,7 +68,8 @@ public class AuroraClient {
         logger.info(responseBean.toString());
     }
 
-    public void createJob() throws Exception {
+    public void createJob() throws Exception 
+    {
 
     	JobKeyBean jobKey = new JobKeyBean("devel", "team-npcomplete", "bash_wrf-npcomplete");
         IdentityBean owner = new IdentityBean("team-npcomplete");
@@ -85,7 +84,7 @@ public class AuroraClient {
 
         ResourceBean resources = new ResourceBean(0.2, 200, 200);
 
-        TaskConfigBean taskConfig = new TaskConfigBean("run_forecast_task-npComplete", processes, resources);
+        TaskConfigBean taskConfig = new TaskConfigBean("run_forecast_task-npcomplete", processes, resources);
         JobConfigBean jobConfig = new JobConfigBean(jobKey, owner, taskConfig, "example");
 
         String executorConfigJson = AuroraThriftClientUtil.getExecutorConfigJson(jobConfig);

@@ -10,7 +10,7 @@ import com.milestone1.aurora.AuroraClient;
 import com.milestone1.mesos.MesosService;
 
 
-@Path("/StormClustering")
+@Path("/StormClusteringAurora")
 public class StormClusteringAurora {
 	
 	@GET
