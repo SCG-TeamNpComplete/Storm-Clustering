@@ -1,22 +1,35 @@
 package com.milestone1.aurora;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import javax.ws.rs.Path;
 
 import com.milestone1.aurora.bean.JobDetailsResponseBean;
 import com.milestone1.aurora.bean.JobResultsBean;
-import com.milestone1.aurora.client.sdk.ReadOnlyScheduler;
 
+/*@Path("/getjobdetails")*/
 public class Application {
-	public static void main(String[] args) throws Exception {
+	
+	
+	public void returnStatus () throws Exception{
+		
+		
+	}
+	
+	
+	public static void main(String args[]) throws Exception {
 		List<String> jobsList=new ArrayList<String>(); 
 		List<JobResultsBean> jobResultsBeanList = new ArrayList<>();
 		
 		String job="Np-Complete";
 		AuroraClient1 client= new AuroraClient1();
-		String jobName="";
+		// String jobName="";
 		
-		String job1=job+"1";
+		String job1=job+new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+		System.out.println(job1);
 		String job2=job+"2";
 		
 		
@@ -33,9 +46,14 @@ public class Application {
 		for(String jobs:jobsList){
 			JobDetailsResponseBean bean=client.getJobDetails(jobs);
 			System.out.println();
+			System.out.println(bean.getTasks().get(0).getAssignedTask().slaveHost);
+			System.out.println(bean.getTasks().get(0).getAssignedTask().taskId);
+			System.out.println(bean.getTasks().get(0).assignedTask.task.contactEmail);
 			System.out.println(bean.toString());
 		}
 		
+		
+		System.out.println("=========================================================================");
 		jobResultsBeanList=client.getJobDetailsList(jobsList);
 		for(JobResultsBean jobs:jobResultsBeanList){
 			System.out.println("In JobResultsBean");
@@ -44,7 +62,6 @@ public class Application {
 			System.out.println(jobs.getImageUrls());
 			
 		}
-		
 		
 		//JobDetailsResponseBean bean=client.getJobDetails(job1);
 		//System.out.println(bean.toString());
