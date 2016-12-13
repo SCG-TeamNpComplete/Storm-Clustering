@@ -60,7 +60,7 @@ public class AuroraThriftClient {
 
                 // construct connection url for scheduler
                 System.out.println("auroraSchedulerPropFile is ---"+auroraSchedulerPropFile);
-                properties.load(AuroraThriftClient.class.getClassLoader().getResourceAsStream("resources/aurora-scheduler.properties"));
+                properties.load(AuroraThriftClient.class.getClassLoader().getResourceAsStream("aurora-scheduler.properties"));
                 String auroraHost = properties.getProperty(Constants.AURORA_SCHEDULER_HOST);
                 String auroraPort = properties.getProperty(Constants.AURORA_SCHEDULER_PORT);
                 String connectionUrl = MessageFormat.format(Constants.AURORA_SCHEDULER_CONNECTION_URL, auroraHost, auroraPort);

@@ -37,7 +37,7 @@ public class AuroraThriftClientUtil {
         String exeConfigJson = null;
         try {
             String template = IOUtils.toString(AuroraThriftClientUtil.class.getClassLoader()
-                    .getResourceAsStream("resources/executor-config-template.json"), Charset.defaultCharset().toString());
+                    .getResourceAsStream("executor-config-template.json"), Charset.defaultCharset().toString());
 
             JSONObject exeConfig = new JSONObject(template);
             if (exeConfig != null) {
