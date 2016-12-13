@@ -2,6 +2,8 @@ package com.milestone1.aurora.bean;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.milestone1.aurora.client.sdk.ScheduleStatus;
+
 @XmlRootElement
 public class JobDetailsBean {
 
@@ -9,6 +11,7 @@ public class JobDetailsBean {
 	private long ram;
 	private double cpu;
 	private long disk;
+	private ScheduleStatus status;
 	private String gif1;
 	private String gif2;
 	
@@ -17,7 +20,7 @@ public class JobDetailsBean {
 	}
 	
 
-	public JobDetailsBean(String jobName, long ramMb, double numCpus, long diskMb, String gif1, String gif2) {
+	public JobDetailsBean(String jobName, long ramMb, double numCpus, long diskMb, String gif1, String gif2,ScheduleStatus status) {
 		super();
 		this.jobName = jobName;
 		this.ram = ramMb;
@@ -25,6 +28,7 @@ public class JobDetailsBean {
 		this.disk = diskMb;
 		this.gif1 = gif1;
 		this.gif2 = gif2;
+		this.status = status;
 	}
 
 	public String getJobName() {
@@ -74,5 +78,17 @@ public class JobDetailsBean {
 	public void setGif2(String gif2) {
 		this.gif2 = gif2;
 	}
+
+
+	public ScheduleStatus getStatus() {
+		return status;
+	}
+
+
+	public void setStatus(ScheduleStatus status) {
+		this.status = status;
+	}
+	
+	
 
 }
